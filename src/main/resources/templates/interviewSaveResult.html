@@ -10,17 +10,20 @@
 
 <section layout:fragment="content">
 
-    <div th:replace="fragments/userDetailFragment :: header">...</div>
+
 
     <br>
     <div th:replace="fragments/interviewDetailFragment :: header">...</div>
-    <br>
-
 
     <br>
-    <a th:href="@{'/interview-tracking/interview/add?userId=' + ${user.id}}">Add interview for user</a>
+    <a th:href="@{'/interview-tracking/searchUser?userId=' + ${interview.userId}}">My homepage</a>
     <br>
 
+    <br>
+    <a th:href="@{'/interview-tracking/interview/add?userId=' + ${interview.userId}}">Add one more interview for
+        user
+    </a>
+    <br>
 </section>
 
 </body>

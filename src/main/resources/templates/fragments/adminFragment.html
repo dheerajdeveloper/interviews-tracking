@@ -7,7 +7,7 @@
 
 
     <h1>Add a new user to the Interviews Tracking Website</h1>
-    <form action="#" th:action="@{/interview-tracking/admin/user/add}" th:object="${user}" method="post">
+    <form th:action="@{/interview-tracking/admin/user/add}" th:object="${user}" method="post">
         <p>username: <input type="text" th:field="*{username}"/></p>
         <p>emailId: <input type="text" th:field="*{emailId}"/></p>
         <p>mobileNo: <input type="text" th:field="*{mobileNo}"/></p>

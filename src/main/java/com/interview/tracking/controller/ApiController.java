@@ -1,6 +1,7 @@
 package com.interview.tracking.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.interview.tracking.model.Interview;
 import com.interview.tracking.model.User;
 import com.interview.tracking.repository.InterviewRepository;
 import com.interview.tracking.repository.InterviewRoundRepository;
@@ -27,9 +28,6 @@ public class ApiController {
     @Autowired
     InterviewRepository interviewRepository;
 
-    @Autowired
-    InterviewRoundRepository interviewRoundRepository;
-
     @GetMapping("/admin/adduser")
     public String content(Model model) {
         User user = new User();
@@ -51,7 +49,14 @@ public class ApiController {
 
         User user = userRepository.findOne(id);
 
+        if(user == null){
+            return "index";
+        }
+
+        List<Interview> interviewList = interviewRepository.findAllByUserId(id);
+
         model.addAttribute("user", user);
+        model.addAttribute("interviewList", interviewList);
         return "searchUserResult";
     }
 }

@@ -32,7 +32,7 @@ public class Interview {
 
     String finalFeedback;
 
-    Date createdOn;
+    Date createdOn = new Date();
 
-    Date updatedOn;
+    Date updatedOn = new Date();
 }
