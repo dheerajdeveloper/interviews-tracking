@@ -44,6 +44,7 @@ public class InterviewController {
 
     @PostMapping("/add")
     public String addInterview(@ModelAttribute Interview interview, Model model) {
+        interview.setUpdatedOn(new Date());
         interview = interviewRepository.save(interview);
 
         List<Interview> interviewList = interviewRepository.findAllByUserId(interview.getUserId());
@@ -56,6 +57,17 @@ public class InterviewController {
     }
 
 
+    @GetMapping("/edit")
+    public String editInterview(@RequestParam("interviewId") Long interviewId, Model model) {
+        Interview interview = interviewRepository.findOne(interviewId);
+        if (interview == null) {
+            return "index";
+        }
 
+        User user = userRepository.findOne(interview.getUserId());
 
+        model.addAttribute("user", user);
+        model.addAttribute("interview", interview);
+        return "addInterview";
+    }
 }

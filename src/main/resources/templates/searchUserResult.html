@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout">
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>My Homepage</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -20,7 +20,9 @@
     <br>
     <a th:href="@{'/interview-tracking/interview/add?userId=' + ${user.id}}">Add interview for user</a>
     <br>
-
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
 </section>
 
 </body>

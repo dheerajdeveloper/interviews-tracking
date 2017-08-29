@@ -12,14 +12,13 @@
             <thead>
             <tr>
 
-                <th> id</th>
-                <th> interviewId</th>
+                <th> Edit</th>
                 <th> roundName</th>
                 <th> roundStatus</th>
                 <th> rounfFeedback</th>
                 <th> roundQuestions</th>
+                <th> interviewDate</th>
                 <th> createdOn</th>
-                <th> updatedOn</th>
                 <th> updatedOn</th>
             </tr>
             </thead>
@@ -29,14 +28,20 @@
             <tr th:each="prod : ${interviewRoundList}">
 
 
-                <td th:text="${prod.id}"></td>
-                <td th:text="${prod.interviewId}"></td>
+
+                <td>
+                    <a th:href="@{'/interview-tracking/interview-round/edit?interviewRoundId=' + ${prod.id}}" th:text="edit"></a>
+
+                </td>
+
+
+
                 <td th:text="${prod.roundName}"></td>
                 <td th:text="${prod.roundStatus}"></td>
                 <td th:text="${prod.rounfFeedback }"></td>
                 <td th:text="${prod.roundQuestions}"></td>
+                <td th:text="${prod.interviewDate}"></td>
                 <td th:text="${prod.createdOn}"></td>
-                <td th:text="${prod.updatedOn}"></td>
                 <td th:text="${prod.updatedOn}"></td>
             </tr>
 

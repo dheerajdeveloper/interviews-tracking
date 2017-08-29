@@ -14,6 +14,7 @@
     <br>
 
     <form th:action=" @{/interview-tracking/interview/add}" th:object="${interview}" method="post">
+        <input type="hidden" th:field="*{id}" th:value="${interview.id}"/>
         <input type="hidden" th:field="*{userId}" th:value="${interview.userId}"/>
         <p>companyName: <input type="text" th:field="*{companyName}"/></p>
         <p>companyLocation: <input type="text" th:field="*{companyLocation}"/></p>

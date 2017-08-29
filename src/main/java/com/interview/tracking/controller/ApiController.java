@@ -7,6 +7,7 @@ import com.interview.tracking.repository.InterviewRepository;
 import com.interview.tracking.repository.InterviewRoundRepository;
 import com.interview.tracking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,7 @@ public class ApiController {
 
     @GetMapping("searchUser")
     public String searchUser(@RequestParam("userId") Long id, Model model) {
+
 
         User user = userRepository.findOne(id);
 

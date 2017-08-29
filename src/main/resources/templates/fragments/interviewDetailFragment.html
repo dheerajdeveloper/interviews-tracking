@@ -12,8 +12,8 @@
             <thead>
             <tr>
 
-                <th> id</th>
-                <th> userId</th>
+                <th> Edit </th>
+                <th> Interview Details</th>
                 <th> companyName</th>
                 <th> companyLocation</th>
                 <th> currentStatus</th>
@@ -30,10 +30,14 @@
 
 
                 <td>
-                    <a th:href="@{'/interview-tracking/interview-round/get?interviewId=' + ${prod.id}}" th:text="${prod.id}"></a>
+                    <a th:href="@{'/interview-tracking/interview/edit?interviewId=' + ${prod.id}}" th:text="edit"></a>
 
                 </td>
-                <td th:text="${prod.userId}"></td>
+
+                <td>
+                    <a th:href="@{'/interview-tracking/interview-round/get?interviewId=' + ${prod.id}}" th:text="details"></a>
+
+                </td>
                 <td th:text="${prod.companyName}"></td>
                 <td th:text="${prod.companyLocation}"></td>
                 <td th:text="${prod.currentStatus}"></td>

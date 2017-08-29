@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout">
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>My Home Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -21,8 +21,6 @@
         <thead>
         <tr>
 
-            <th> id</th>
-            <th> userId</th>
             <th> companyName</th>
             <th> companyLocation</th>
             <th> currentStatus</th>
@@ -37,8 +35,6 @@
 
         <tr>
 
-            <td th:text="${interview.id}"></td>
-            <td th:text="${interview.userId}"></td>
             <td th:text="${interview.companyName}"></td>
             <td th:text="${interview.companyLocation}"></td>
             <td th:text="${interview.currentStatus}"></td>

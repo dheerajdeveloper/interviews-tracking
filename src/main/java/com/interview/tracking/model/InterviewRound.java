@@ -29,9 +29,11 @@ public class InterviewRound {
 
     String roundQuestions;
 
+    String interviewDate;
+
     Date createdOn = new Date();
 
-    Date updatedOn = new Date();
+    Date updatedOn;
 
 
 }

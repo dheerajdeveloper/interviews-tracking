@@ -4,7 +4,16 @@
       layout:decorator="layout">
 <body>
 <section layout:fragment="content">
-    <div th:replace="fragments/indexFragment :: header">...</div>
+
+    <body>
+    <h1>Welcome!</h1>
+
+    <p>Click <a th:href="@{/hello}">here</a> to access your account.</p>
+    </body>
+
+
+
+    <!--<div th:replace="fragments/indexFragment :: header">...</div>-->
 
 </section>
 </body>

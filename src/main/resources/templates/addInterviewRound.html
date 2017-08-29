@@ -11,11 +11,13 @@
 
     <h1>Adding a new interview round for the interview</h1>
     <form th:action="@{/interview-tracking/interview-round/add}" th:object="${interviewRound}" method="post">
+        <input type="hidden" th:field="*{id}" th:value="${interviewRound.id}"/>
         <input type="hidden" th:field="*{interviewId}" th:value="${interview.id}"/>
         <p>roundName: <input type="text" th:field="*{roundName}"/></p>
         <p>roundStatus: <input type="text" th:field="*{roundStatus}"/></p>
         <p>rounfFeedback: <input type="text" th:field="*{rounfFeedback}"/></p>
         <p>roundQuestions: <input type="text" th:field="*{roundQuestions}"/></p>
+        <p>interviewDate: <input type="text" th:field="*{interviewDate}"/></p>
         <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
     </form>
 
@@ -29,7 +31,6 @@
     <br>
     <a th:href="@{'/interview-tracking/searchUser?userId=' + ${user.id}}">My Homepage</a>
     <br>
-
 
 
 </section>

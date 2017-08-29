@@ -34,5 +34,5 @@ public class Interview {
 
     Date createdOn = new Date();
 
-    Date updatedOn = new Date();
+    Date updatedOn;
 }

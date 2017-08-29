@@ -3,6 +3,10 @@
 <body>
 
 <div th:fragment="header">
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
     <p>Welcome to the admin page of Intreviews Tracking</p>
 
 

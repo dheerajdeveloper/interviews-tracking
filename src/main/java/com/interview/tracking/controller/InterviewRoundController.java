@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -53,6 +54,7 @@ public class InterviewRoundController {
 
     @PostMapping("/add")
     public String addInterviewRound(@ModelAttribute InterviewRound interviewRound, Model model) {
+        interviewRound.setUpdatedOn(new Date());
         interviewRound = interviewRoundRepository.save(interviewRound);
 
         List<InterviewRound> interviewRoundList =
@@ -84,4 +86,23 @@ public class InterviewRoundController {
         return "interviewRoundSearchResult";
     }
 
+
+    @GetMapping("/edit")
+    public String editInterviewRound(@RequestParam("interviewRoundId") Long interviewRoundId, Model model) {
+        InterviewRound interviewRound = interviewRoundRepository.findOne(interviewRoundId);
+
+
+        if (interviewRound == null) {
+            return "index";
+        }
+
+        Interview interview = interviewRepository.findOne(interviewRound.getInterviewId());
+
+        User user = userRepository.findOne(interview.getUserId());
+        model.addAttribute("user", user);
+        model.addAttribute("interview", interview);
+        model.addAttribute("interviewRound", interviewRound);
+
+        return "addInterviewRound";
+    }
 }
