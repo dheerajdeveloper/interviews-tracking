@@ -54,15 +54,13 @@
 
 
     <br>
-    <a th:href="@{'/interview-tracking/interview-round/add?interviewId=' + ${interview.id}}">Add interview Round for interview</a>
+    <a th:href="@{'/interview-tracking/interview-round/add?interviewId=' + ${interview.id}}">Add interview Round for
+        interview</a>
     <br>
 
-
     <br>
+    <div th:replace="fragments/homepageLinkFragment :: header">...</div>
     <br>
-    <a th:href="@{'/interview-tracking/searchUser?userId=' + ${user.id}}">My Homepage</a>
-    <br>
-
 
 </section>
 

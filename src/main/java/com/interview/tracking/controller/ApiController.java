@@ -7,6 +7,8 @@ import com.interview.tracking.repository.InterviewRepository;
 import com.interview.tracking.repository.InterviewRoundRepository;
 import com.interview.tracking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +47,7 @@ public class ApiController {
         return "userSaveResult";
     }
 
+    @Secured ({"ROLE_ADMIN"})
     @GetMapping("searchUser")
     public String searchUser(@RequestParam("userId") Long id, Model model) {
 

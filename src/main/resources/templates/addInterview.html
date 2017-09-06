@@ -24,12 +24,9 @@
         <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
     </form>
 
-
     <br>
+    <div th:replace="fragments/homepageLinkFragment :: header">...</div>
     <br>
-    <a th:href="@{'/interview-tracking/searchUser?userId=' + ${user.id}}">My Homepage</a>
-    <br>
-
 
 </section>
 
